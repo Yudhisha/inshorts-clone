@@ -1,0 +1,20 @@
+.footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(18, 18, 19);
+    color: white;
+    padding: 10px;
+}
+.iconContainer{
+    padding: 20px 20px 20px 20px;
+    color: white;
+}
+a{
+    width: 60%;
+    height: 50px;
+    padding: 15px;
+    text-decoration: none;
+    color: white;
+    justify-content: space-evenly;
+}
