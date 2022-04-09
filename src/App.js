@@ -3,7 +3,6 @@ import './App.css';
 import NavInshorts from './Components/NavInshorts/NavInshorts';
 import NewsContent from './Components/NewsContent/NewsContent';
 import FooterInshorts from './Components/FooterInshorts/FooterInshorts';
-import apikey from './data/config';
 import axios from 'axios';
 
 function App() {
@@ -15,8 +14,9 @@ function App() {
 
   const getNewsApi = async()=>{
     try{
-      const proxyUrl = "https://cors.anywhere.herokuapp.com/";
-      const news = await axios.get(`https://${proxyUrl}newsapi.org/v2/top-headlines?country=us&category=${category}&apiKey=${apikey}&pagesize=${loadmore}`)
+      const proxyUrl = "https://cors-anywhere.herokuapp.com/";
+      const news = await axios.get(`https://newsapi.org/v2/top-headlines?country=us&category=${category}&apiKey=${process.env.REACT_APP_API_KEY}&pagesize=${loadmore}`)
+      // const news = await axios.get(`https://${proxyUrl}newsapi.org/v2/top-headlines?country=us&category=${category}&apiKey=${process.env.REACT_APP_API_KEY}&pagesize=${loadmore}`)
       setnewsArray(news.data.articles);
       setnewsResult(news.data.totalResults)   
     }catch(error){
@@ -29,7 +29,7 @@ function App() {
       // eslint-disable-next-line
   },[newsResult,category,loadmore]);
 
-  // console.log(newsArray);
+  console.log(process.env);
 
 
   return (
