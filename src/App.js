@@ -11,7 +11,6 @@ function App() {
   const [newsResult, setnewsResult] = useState();
   const [loadmore, setLoadmore] = useState(20)
 
-
   const getNewsApi = async()=>{
     try{
       const proxyUrl = "https://cors-anywhere.herokuapp.com/";
